@@ -1,0 +1,69 @@
+`timescale 1ns/1ns  // 定义时间单位和精度
+`include "i2s_top.sv"  // 包含待测试模块
+
+
+module tb_i2s_top;
+
+    /* iverilog */
+    initial begin
+        $dumpfile("tb_i2s_top.vcd");
+        $dumpvars(0, tb_i2s_top);
+    end
+
+
+    reg clk;
+    reg reset;
+
+    wire sck;
+    wire bck;
+    wire din;
+    wire lrck;
+
+    reg [15:0] Hz [0:15];
+
+
+    reg [15:0] sw = 0;
+
+    i2s_top uut (
+        .clk(clk),
+        .reset(reset),
+
+        .sw(sw),
+
+        .Hz(Hz),
+        .sck(sck),
+        .bck(bck),
+        .din(din),
+        .lrck(lrck)
+    );
+
+    initial begin
+        clk = 0;
+
+        forever #5 clk = ~clk;  // 100MHz clk
+    end
+
+    initial begin
+        reset = 1;
+        #10000;
+        reset = 0;
+    end
+
+
+    initial begin
+        Hz[1]=0; Hz[2]=0; Hz[3]=0; Hz[4]=0; Hz[5]=0; Hz[6]=0; Hz[7]=0; Hz[8]=0; Hz[9]=0; Hz[10]=0; Hz[11]=0; Hz[12]=0; Hz[13]=0; Hz[14]=0; Hz[15]=0;
+        Hz[0]=0; #6000000
+        Hz[0]=440; #6000000;
+        Hz[0]=50; #6000000;
+        Hz[0]=4400; #6000000;
+        
+        #6000000; $finish;
+    end
+
+    // 监控输出信号
+    // initial begin
+    //     $monitor("Time: %0dns, Reset: %b, SCK: %b, BCK: %b, DIN: %b, LRCK: %b", 
+    //              $time, reset, sck, bck, din, lrck);
+    // end
+
+endmodule
