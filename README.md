@@ -7,9 +7,9 @@ The idea came from my long-time fascination with music and electronic design. Tr
 
 The system is built with SystemVerilog on the Basys 3 (AMD Artix-7) FPGA board and implements a full audio pipeline from key input to DAC output.
 
-Keyboard signals are processed in parallel through USB-HID protocols, then passed into a custom digital signal processing (DSP) module that supports multi-tone synthesis, tone importing, and unlimited polyphony within hardware limits.
+Keyboard signals are processed through USB-HID protocols, then passed into a custom digital signal processing (DSP) module that supports multi-tone synthesis, tone importing, and unlimited polyphony within hardware limits.
 
-An I²S audio interface transmits high-fidelity stereo sound to an external DAC, producing rich, low-latency audio (<5 ms).
+An I²S audio interface transmits high-fidelity stereo sound to an external DAC, producing rich, low-latency audio.
 
 Designing MuPiano taught me how to combine hardware engineering, digital signal processing, and musical creativity into a unified system.
 
