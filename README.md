@@ -1,6 +1,6 @@
 # MuPiano
 
-![MuPiano](demonstration.jpg)
+![MuPiano](Demonstration.jpg)
 
 [MuPiano - FPGA Chord Instrument Demonstration 哔哩哔哩 bilibili](https://www.bilibili.com/video/BV1HUrkYvEdF/)
 
