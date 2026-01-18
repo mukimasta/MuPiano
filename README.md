@@ -1,3 +1,10 @@
+# MuPiano
+
+![MuPiano](demonstration.jpg)
+
+[MuPiano - FPGA Chord Instrument Demonstration 哔哩哔哩 bilibili](https://www.bilibili.com/video/BV1HUrkYvEdF/)
+
+
 ## Introduction
 
 “Traditional instruments separate melody and harmony — I wanted to play both at once.”
